@@ -11,14 +11,15 @@ import {
 import Nav from "./components/Nav";
 import Login from "./components/Login";
 import FriendsList from "./components/FriendsList";
+import { PrivateRoute } from "./components/PrivateRoute";
 
 // SECTION COMPONENT
 function App() {
   return (
     <Router>
       <Route path="/" component={Nav} />
-      <Route path="/" component={Login} />
-      <Route path="/friends_list" component={FriendsList} />
+      <Route path="/login" component={Login} />
+      <PrivateRoute path="/friends_list" component={FriendsList} />
     </Router>
   );
 }
