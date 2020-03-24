@@ -34,9 +34,10 @@ const Login = (props) => {
           "token",
           JSON.stringify(response.data.payload)
         );
-        // NOTE Props added to component, then history to push the user to the FriendsList component
+        // NOTE Props added to component, then use props.history to push the user to the FriendsList component
         props.history.push("/friends_list");
-      });
+      })
+      .catch((error) => console.log(error.response.data.error));
   };
 
   // SECTION 2.) Login form accepts input for username and password. Our handleChanges function takes the values from the inputs and sets them to state. See section 3 for details.
