@@ -1,3 +1,4 @@
+// SECTION LIBRARY IMPORTS
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -5,8 +6,11 @@ import {
   NavLink,
   Link
 } from "react-router-dom";
+
+//SECTION COMPONENT IMPORTS
 import Nav from "./components/Nav";
 import Login from "./components/Login";
+import FriendsList from "./components/FriendsList";
 
 // SECTION COMPONENT
 function App() {
@@ -14,6 +18,7 @@ function App() {
     <Router>
       <Route path="/" component={Nav} />
       <Route path="/" component={Login} />
+      <Route path="/friends_list" component={FriendsList} />
     </Router>
   );
 }

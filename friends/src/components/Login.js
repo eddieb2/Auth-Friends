@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
-const Login = () => {
+const Login = (props) => {
   // SECTION 1.) State set up as an object with username and password keys as required by the server.
   const [credentials, setCredentials] = useState({
     username: "",
@@ -34,6 +34,8 @@ const Login = () => {
           "token",
           JSON.stringify(response.data.payload)
         );
+        // NOTE Props added to component, then history to push the user to the FriendsList component
+        props.history.push("/friends_list");
       });
   };
 
