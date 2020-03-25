@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { Button, TextField } from "@material-ui/core";
 
 const Login = (props) => {
   // SECTION 1.) State set up as an object with username and password keys as required by the server.
@@ -37,27 +38,37 @@ const Login = (props) => {
         // NOTE Props added to component, then use props.history to push the user to the FriendsList component
         props.history.push("/friends_list");
       })
-      .catch((error) => console.log(error.response.data.error));
+      .catch((error) =>
+        console.log(error.response.data.error)
+      );
   };
 
   // SECTION 2.) Login form accepts input for username and password. Our handleChanges function takes the values from the inputs and sets them to state. See section 3 for details.
   return (
     <form onSubmit={login}>
-      <input
+      <TextField
         type="text"
         name="username"
         placeholder="username"
         value={credentials.username}
         onChange={handleChanges}
+        variant="outlined"
       />
-      <input
+      <TextField
         type="text"
         name="password"
         placeholder="password"
         value={credentials.password}
         onChange={handleChanges}
+        variant="outlined"
       />
-      <button type="submit">Login</button>
+      <Button
+        type="submit"
+        variant="outlined"
+        color="default"
+      >
+        Login
+      </Button>
     </form>
   );
 };

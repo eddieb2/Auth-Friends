@@ -19,7 +19,10 @@ function App() {
     <Router>
       <Route path="/" component={Nav} />
       <Route path="/login" component={Login} />
-      <PrivateRoute path="/friends_list" component={FriendsList} />
+      <PrivateRoute
+        path="/friends_list"
+        component={FriendsList}
+      />
     </Router>
   );
 }
